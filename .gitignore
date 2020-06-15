@@ -1,3 +1,6 @@
+### Ignore webapp resource files ###
+/src/main/webapp/resources/*
+
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
@@ -31,4 +34,4 @@ build/
 .vscode/
 
 ### Ignore webapp resource files ###
-/src/main/webapp/resources
+/src/main/webapp/resources/*
