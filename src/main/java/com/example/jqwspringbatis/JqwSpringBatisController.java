@@ -23,7 +23,7 @@ public class JqwSpringBatisController {
 		return "grid";
 	}
 	
-	@RequestMapping(value = "/get-users", method = RequestMethod.POST)
+	@RequestMapping(value = "/users", method = RequestMethod.GET)
 	public List<User> getUsers() {
 		return userMapper.getUsers();
 	}
