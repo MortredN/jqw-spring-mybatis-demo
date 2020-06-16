@@ -28,8 +28,8 @@ public interface UserMapper {
 	void createUser(User user);
 	
 	@UpdateProvider(type = UserMapperMethod.class, method = "updateUser")
-	void updateUser(int id, User user);
+	void updateUser(String ids, User user);
 	
 	@DeleteProvider(type = UserMapperMethod.class, method = "deleteUser")
-	void deleteUser(int id);
+	void deleteUser(String ids);
 }

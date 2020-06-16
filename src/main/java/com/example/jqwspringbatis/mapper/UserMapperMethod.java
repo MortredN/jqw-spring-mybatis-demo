@@ -64,7 +64,7 @@ public class UserMapperMethod {
 		}.toString();
 	}
 	
-	public String updateUser(final int id, final User user) {
+	public String updateUser(final String ids, final User user) {
 		return new SQL() {
 			{
 				UPDATE("user");
@@ -82,17 +82,18 @@ public class UserMapperMethod {
 				}
 				
 				SET(setQuery);
-				WHERE("id = " + id);
+				
+				WHERE("id IN (" + ids + ")");
 			}
 		}.toString();
 	}
 	
-	public String deleteUser(final int id) {
+	public String deleteUser(final String ids) {
 		return new SQL() {
 			{
 				UPDATE("user");
 				SET("active = false");				
-				WHERE("id = " + id);
+				WHERE("id IN (" + ids + ")");
 			}
 		}.toString();
 	}

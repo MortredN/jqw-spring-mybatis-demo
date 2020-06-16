@@ -19,10 +19,13 @@ $(document).ready(function () {
     	    contentType: 'application/json',
     	    success: function (data, status, xhr) {
     	        alert('Status: ' + status + ' - ' + data);
+    	        $('#usergrid').jqxGrid('clearselection');
+    	        $('#usergrid').jqxGrid('updatebounddata');
+    	        $('.addInput').val('');
     	    },
     	    error: function (jqXhr, textStatus, errorMessage) {
     	    	alert('Error' + errorMessage);
     	    }
     	});
-	});	
+	});
 });

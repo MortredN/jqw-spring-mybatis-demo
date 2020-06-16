@@ -41,13 +41,11 @@ $(document).ready(function () {
         var selectedRow = event.args.rowindex;
         var selectedId = $('#usergrid').jqxGrid('getcelltext', selectedRow, 'id');
         selectedIds.push(selectedId);
-        console.log(selectedIds)
     });
     $('#usergrid').bind('rowunselect', function (event) {
         var selectedRow = event.args.rowindex;
         var selectedId = $('#usergrid').jqxGrid('getcelltext', selectedRow, 'id');
         selectedIds = selectedIds.filter(id => id != selectedId);
-        console.log(selectedIds)
     });
     
     $('#selectAllBtn').jqxButton({ width: '150', height: '25'});

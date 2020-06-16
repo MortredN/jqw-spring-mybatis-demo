@@ -3,7 +3,9 @@ package com.example.jqwspringbatis;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -29,9 +31,21 @@ public class JqwSpringBatisController {
 		return userMapper.getUsers();
 	}
 	
-	@RequestMapping(value = "/users", method = RequestMethod.POST)
+	@RequestMapping(value = "/users", method = RequestMethod.POST, headers = { "content-type=application/json" }, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public String createUser(@RequestBody User user) {
 		userMapper.createUser(user);
 		return "Successfully added User: " + user.toString();
+	}
+	
+	@RequestMapping(value = "/users/{ids}", method = RequestMethod.PUT, headers = { "content-type=application/json" }, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public String updateUser(@PathVariable String ids, @RequestBody User user) {
+		userMapper.updateUser(ids, user);
+		return "Successfully updated User ID ( " + ids + " )";
+	}
+	
+	@RequestMapping(value = "/users/{ids}", method = RequestMethod.DELETE)
+	public String deleteUser(@PathVariable String ids) {
+		userMapper.deleteUser(ids);
+		return "Successfully deleted User ID ( " + ids + " )";
 	}
 }
