@@ -23,13 +23,6 @@ public interface UserMapper {
 	})
 	List<User> getUsers();
 	
-	@SelectProvider(type = UserMapperMethod.class, method = "getUserById")
-	@Results(value = {
-			@Result(property = "id", column = "id"),
-			@Result(property = "name", column = "name")
-	})
-	User getUserById(int id);
-	
 	@InsertProvider(type = UserMapperMethod.class, method = "createUser")
 	@Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
 	void createUser(User user);

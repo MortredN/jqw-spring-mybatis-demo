@@ -22,4 +22,7 @@ public class User {
 		this.name = name;
 	}
 	
+	public String toString() {
+		return "User ID#" + id + " : " + name;
+	}
 }

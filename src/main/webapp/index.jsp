@@ -57,11 +57,11 @@
             <li>Delete</li>
         </ul>
         <div>
-            <input style='margin: 20px auto; display: block;' id='addUserInput'/>
+            <input style='margin: 20px auto; display: block;' class='addInput' id='addNameInput'/>
 	        <input style='margin: 20px auto; display: block;' type="submit" value="Add user" id='addUserBtn' />
         </div>
         <div>
-            <input style='margin: 20px auto; display: block;' id='editUsersInput'/>
+            <input style='margin: 20px auto; display: block;' class='editInput' id='editNameInput'/>
 	        <input style='margin: 20px auto; display: block;' type="submit" value="Edit user(s)" id='editUsersBtn' />
         </div>
         <div>
