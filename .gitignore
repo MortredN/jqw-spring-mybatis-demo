@@ -1,5 +1,7 @@
 ### Ignore webapp resource files ###
-/src/main/webapp/resources/*
+/src/main/webapp/resources/css/jqwidgets/
+/src/main/webapp/resources/js/jqwidgets/
+/src/main/webapp/resources/js/lib/
 
 HELP.md
 target/
